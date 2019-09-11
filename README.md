@@ -1,4 +1,4 @@
-# STAR - Řídící systém
+# HACKNUTY STAR
 
 Repozitory obsahuje kompletní balík Řídícího systému STAR, který se skládá z dockerových kontejnerů. 
 
