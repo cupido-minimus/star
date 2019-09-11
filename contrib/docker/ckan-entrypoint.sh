@@ -58,7 +58,7 @@ if [ ! -e "$CONFIG" ]; then
   ckan-paster --plugin=ckan db init -c "${CKAN_CONFIG}/production.ini"
 
   echo "!!! creating user systemuser !!!!"
-  ckan-paster --plugin=ckan user add systemuser email=jiri@hrad.ec password=Heslo123 apikey="58d94d5c-7766-4f1b-bc7a-b3034ecf5942" -c "${CKAN_CONFIG}/production.ini"  
+  ckan-paster --plugin=ckan user add systemuser email=andrea.danelova@cenia.cz password=Heslo123 apikey="58d94d5c-7766-4f1b-bc7a-b3034ecf5942" -c "${CKAN_CONFIG}/production.ini"  
   echo "!!! adding rights to systemuser !!!!"
   ckan-paster --plugin=ckan sysadmin add systemuser -c "${CKAN_CONFIG}/production.ini" 
 #  echo "!!! adding permissiong for datastore !!!!"
