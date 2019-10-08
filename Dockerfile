@@ -73,9 +73,13 @@ RUN ckan-pip install -U pip && \
     ckan-pip install -e "git+https://github.com/ckan/ckanext-basiccharts.git#egg=ckanext-basiccharts" && \
     ckan-pip install -e "git+https://github.com/ckan/ckanext-mapviews.git#egg=ckanext-mapviews" && \
 #    ckan-pip install ckanext-datarequests && \
-    ckan-pip install -e "git+https://github.com/okfn/ckanext-disqus#egg=ckanext-disqus" && \
+    #ckan-pip install -e "git+https://github.com/okfn/ckanext-disqus#egg=ckanext-disqus" && \
     ckan-pip install -e "git+https://github.com/ckan/ckanext-apihelper.git#egg=ckanext-apihelper" && \
     ckan-pip install -e "git+https://github.com/jqnatividad/ckanext-odata#egg=ckanext-odata" && \
+    ckan-pip install -e "git+https://github.com/EnviDat/ckanext-composite#egg=ckanext-composite" && \
+    ckan-pip install -e "git+https://github.com/open-data/ckanext-repeating#egg=ckanext-repeating" && \
+    ckan-pip install -e "git+https://github.com/EnviDat/ckanext-restricted#egg=ckanext-restricted" && \
+    ckan-pip install -e "git+https://github.com/datagovuk/ckanext-report.git#egg=ckanext-report" && \
     ln -s $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
     cp -v $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh /ckan-entrypoint.sh && \
     cp -v $CKAN_VENV/src/ckan/contrib/docker/ckan_dataset.json $CKAN_VENV/src/ckanext-scheming/ckanext/scheming/ckan_dataset.json && \

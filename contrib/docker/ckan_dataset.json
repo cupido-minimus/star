@@ -22,7 +22,7 @@
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data"
     },
-        {
+  {
       "field_name": "datum_platnosti",
       "label": "Datum platnosti datasetu",
       "form_snippet": "date.html",
@@ -127,6 +127,45 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete"
-    }
+    },
+    {
+      "field_name": "restricted",
+      "label": "Access Restriction",
+      "preset": "composite",
+      "subfields":
+       [
+         {
+           "field_name": "level",
+           "label": "Level",
+           "preset": "select",
+           "form_include_blank_choice": false,
+           "required": true,
+           "choices": [
+             {
+               "value": "public",
+               "label": "Public"
+             },
+             {
+               "value": "registered",
+               "label": "Registered Users"
+             },
+             {
+               "value": "same_organization",
+               "label": "Same Organization Members"
+              },
+              {
+               "value": "only_allowed_users",
+               "label": "Allowed Users Only"
+             }
+            ]
+          },
+           {
+           "field_name": "allowed_users",
+            "label": "Allowed Users",
+            "preset": "tag_string_autocomplete",
+            "data-module-source":"/api/3/user_autocomplete"
+            }
+       ]
+     }
   ]
 }

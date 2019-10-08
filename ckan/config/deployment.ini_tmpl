@@ -86,7 +86,7 @@ ckan.site_id = default
 ## Redis Settings
 
 # URL to your Redis instance, including the database to be used.
-#ckan.redis.url = redis://localhost:6379/0
+ckan.redis.url = redis://localhost:6379/0
 
 
 ## CORS Settings
@@ -106,7 +106,7 @@ ckan.site_id = default
 #		same origin policy
 #ckan.plugins = stats text_view image_view recline_view datastore datapusher datarequests disqus spatial_metadata resource_proxy dcat dcat_rdf_harvester dcat_json_harvester dcat_json_interface structured_data hierarchy_display hierarchy_form mzp geo_view geojson_view wmts_view tableau_view 
 #ckan.plugins = stats text_view image_view recline_view datastore datapusher datarequests disqus resource_proxy dcat dcat_rdf_harvester dcat_json_harvester dcat_json_interface structured_data tableau_view apihelper  hierarchy_display hierarchy_form mzp 
-ckan.plugins = stats text_view image_view recline_view datastore datapusher resource_proxy scheming_datasets spatial_metadata spatial_query dcat dcat_rdf_harvester dcat_json_harvester dcat_json_interface structured_data apihelper hierarchy_display hierarchy_form mzp datarequests disqus geo_view odata tableau_view navigablemap choroplethmap viewhelpers dashboard_preview linechart barchart piechart basicgrid
+ckan.plugins = stats text_view image_view recline_view datastore datapusher resource_proxy scheming_datasets spatial_metadata spatial_query dcat dcat_rdf_harvester dcat_json_harvester dcat_json_interface structured_data apihelper hierarchy_display hierarchy_form mzp datarequests geo_view odata tableau_view navigablemap choroplethmap viewhelpers dashboard_preview linechart barchart piechart basicgrid composite restricted
 
 # Define which views should be created by default
 # (plugins must be loaded in ckan.plugins)
@@ -185,9 +185,9 @@ ckan.max_image_size = 20
 
 # Make sure you have set up the DataStore
 
-#ckan.datapusher.formats = csv xls xlsx tsv application/csv application/vnd.ms-excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-#ckan.datapusher.url = http://127.0.0.1:8800/
-#ckan.datapusher.assume_task_stale_after = 3600
+ckan.datapusher.formats = csv tsv xml json application/csv application/xml application/json 
+ckan.datapusher.url = http://127.0.0.1:8800/
+ckan.datapusher.assume_task_stale_after = 3600
 
 # Resource Proxy settings
 # Preview size limit, default: 10MB
@@ -207,6 +207,8 @@ ckanext.spatial.search_backend = solr
 
 #scheming
 scheming.presets = ckanext.scheming:presets.json
+                    ckanext.repeating:presets.json
+                    ckanext.composite:presets.json
 scheming.dataset_fallback = false
 scheming.dataset_schemas = ckanext.scheming:ckan_dataset.json
 #                           ckanext.spatialx:spatialx_schema.json
@@ -216,10 +218,10 @@ ckan.datarequests.comments = true
 ckan.datarequests.show_datarequests_badge = true
 
 # disqus
-disqus.secret_key  = neRyfzRvowchXND2jk4R7s5RI0oOfJditJg4iVkhIPAnF9JA1pM6sjdXWugd3Iun
+#disqus.secret_key  = neRyfzRvowchXND2jk4R7s5RI0oOfJditJg4iVkhIPAnF9JA1pM6sjdXWugd3Iun
 #disqus.public_key  = 6zCUo9O2zJpRxUXfDy7UdSd4qy0Q3lgHprsIQyc9lJOB6qUe4Xqv5ZtZPj4RWwcK
-disqus.public_key  = 6304de17f01e446caa79d4f19333927d
-disqus.name = t-star-env-cz
+#disqus.public_key  = 6304de17f01e446caa79d4f19333927d
+#disqus.name = star-env-cz
 
 
 ## Email settings
